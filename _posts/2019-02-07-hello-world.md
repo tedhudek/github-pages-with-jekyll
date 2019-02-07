@@ -1,8 +1,6 @@
 ---
-
-title: Hello World
+title: "Hello World"
 date: 2019-02-07
-
 ---
 
 # New stuff
