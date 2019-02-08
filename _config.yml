@@ -1,8 +1,7 @@
 title: Ted's blog
 
-# social links
 twitter_username: tedhudek
 
-show_excerpts: true # set to false to remove excerpts on the homepage
+show_excerpts: false
 
 theme: minima
