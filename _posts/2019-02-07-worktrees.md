@@ -65,6 +65,10 @@ cd : Cannot find path 'C:\repo\sandbox-worktree-dir' because it does not exist.
 
 Isn't Git magic?
 
+I'd love to connect with you on Twitter.  Drop me a line and let me know if you found this article useful.
+
+[@tedhudek](https://twitter.com/tedhudek)
+
 ## Resources
 
 [Git worktree documentation page](https://git-scm.com/docs/git-worktree)
