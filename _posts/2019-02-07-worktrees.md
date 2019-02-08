@@ -1,5 +1,5 @@
 ---
-title: "Git worktrees demystified"
+title: "Git worktrees"
 date: 2019-02-07
 ---
 
