@@ -1,9 +1,6 @@
 title: Ted's blog
 author:
   name: Ted Hudek
-
 twitter_username: tedhudek
-
 show_excerpts: false
-
-theme: jekyll-theme-midnight
+theme: jekyll-theme-slate
