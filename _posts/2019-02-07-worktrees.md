@@ -3,8 +3,6 @@ title: "Git worktrees demystified"
 date: 2019-02-07
 ---
 
-# Git worktrees Demystified
-
 I've been using Git happily for years, but just discovered an incredible feature.  When I skimmed a few blog entries, I didn't get it right away; in fact it wasn't until I tried it that it made sense.  In the hope of sparing you that ramp up, I decided to write up a post that hopefully will help you *get* it right off the bat.  Ready?  Here we go.
 
 ## The value prop
