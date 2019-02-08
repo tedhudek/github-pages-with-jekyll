@@ -1,6 +1,13 @@
-title: Ted's blog
-author:
-  name: Ted Hudek
-twitter_username: tedhudek
-show_excerpts: true
+title: Test blog
+author: Ted Hudek
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  Contains some blog posts.
+
+# social links
+twitter_username: your-twitter-handle
+github_username:  your-github-handle
+
+show_excerpts: true # set to false to remove excerpts on the homepage
+
 theme: minima
