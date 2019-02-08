@@ -1,4 +1,3 @@
-# Welcome to my blog
+# Ted's blog
 
-I'm glad you are here. I plan to talk about various tech topics.
-
+This is an occasional series in which I'll write about Git and other interesting things.
