@@ -13,7 +13,7 @@ This works fine, but it's a heavyweight solution.  You need disk space for two f
 
 You can get a similar but even better result with a single clone by creating a worktree.
 
-When you create a worktree from an existing clone, you specify a directory (must be outside of the existing clone) and Git will set you up with a configuration like I just described. You'll be able to have a different branch checked out in the worktree than in the clone itself, but the best part is when you commit.  Any commits you make in the worktree are visible in the clone -- immediately -- and vice-versa.  You could even edit files from the clone and files from the worktree at the same time!  This is a great alternative to stashing your changes.
+When you create a worktree from an existing clone, you specify a directory (must be outside of the existing clone) and Git will set you up with a configuration like I just described. You'll be able to have a different branch checked out in the worktree than in the clone itself, but the best part is when you commit.  Any commits you make in the worktree are visible in the clone -- immediately -- and vice-versa.  You could even edit files from the clone and files from the worktree at the same time.  This is a great alternative to stashing your changes.
 
 All while using less disk space than two clones would because Git intelligently manages when it actually duplicates on your hard drive and when it just uses symbolic linking.  But you don't have to worry about any of that, it just happens under the hood.
 
