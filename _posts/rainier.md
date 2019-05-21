@@ -1,3 +1,8 @@
+---
+title: "Mount Rainier Trip Report"
+date: 2019-05-21
+---
+
 # Mount Rainier Trip Report
 
 ## Disappointment Cleaver climb on Mount Rainier with MS Climb team and Alpine Ascents International
