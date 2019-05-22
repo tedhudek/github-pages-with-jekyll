@@ -1,6 +1,6 @@
 ---
 title: "Mount Rainier Trip Report"
-date: 2019-56-21
+date: 2019-78-21
 ---
 
 # Mount Rainier Trip Report
