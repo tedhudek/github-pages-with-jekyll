@@ -1,71 +1,35 @@
 ---
 title: "Git worktrees"
-date: 2019-02-07
+date: 2020-06-16
 ---
 
-I've been using Git happily for years, but just discovered an incredible feature.  When I skimmed a few blog entries, I didn't get it right away; in fact it wasn't until I tried it that it made sense.  In the hope of sparing you that ramp up, I decided to write up a post that hopefully will help you get the idea just by reading.  Ready?  Here we go.
+Did you ever want to check out multiple branches in your Git clone at the same time? Maybe you have a repo for which switching branches takes a prohibitively long time.
 
-## The value prop
+You can use the worktrees feature in Git to approximate having multiple clones of the same repo on your machine.  Here's how it works.
 
-Let's say you wanted to have a second clone of the same repo on your machine. That way, each clone could have a different branch checked out, and you could use any file diff tool to compare files.  
-
-This works fine, but it's a heavyweight solution.  You need disk space for two full clones. You can share commits between clones, but to do so you have to push up to the official repo and then pull down.
-
-You can get a similar but even better result with a single clone by creating a worktree.
-
-When you create a worktree from an existing clone, you specify a directory (must be outside of the existing clone) and Git will set you up with a configuration like I just described. You'll be able to have a different branch checked out in the worktree than in the clone itself, but the best part is when you commit.  Any commits you make in the worktree are visible in the clone -- immediately -- and vice-versa.  You could even edit files from the clone and files from the worktree at the same time.  This is a great alternative to stashing your changes.
-
-All while using less disk space than two clones would because Git intelligently manages when it actually duplicates on your hard drive and when it just uses symbolic linking.  But you don't have to worry about any of that, it just happens under the hood.
-
-This is awesome, you're saying, what's the catch?  Really the only minor caveat of this amazing feature is that you can't have the same branch checked out simultaneously in a worktree and its associated clone, because then they could drift apart.  Oh, and it doesn't play well with submodules.
-
-Note that you're not limited to a single worktree; in fact, you can create as many as you like.
-
-To help it all sink in, here's a sample walkthrough:
+When you create a worktree from an existing clone, you specify a directory (must be outside of the existing working directory) and a branch name, and Git creates an additional working directory at the location you specified, with the branch you specified already checked out. You'll be able to have a different branch checked out in the worktree than in the main working tree. Any commits you make in the worktree are visible in the original directory -- immediately -- and vice-versa.  
 
 ```cmd
-# create a worktree
 
-C:\repo\sandbox [master ≡]> git worktree add -b new-working-branch ../sandbox-worktree-dir master
-Preparing worktree (new branch 'new-working-branch')
-HEAD is now at 97c8a22 draft
-C:\repo\sandbox [master ≡]> cd ..\sandbox-worktree-dir\
+git worktree add ../my-worktree-dir master
 
-# do some work
+git worktree list
 
-C:\repo\sandbox-worktree-dir [new-working-branch +0 ~1 -0 !]> git commit -am 'test'
-[new-working-branch e55177d] test
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-# switch back to our clone and verify that we can see the commit we just made
-
-C:\repo\sandbox-worktree-dir [new-working-branch]> cd ..\sandbox\
-C:\repo\sandbox [master ≡]> git log -1 --oneline new-working-branch
-e55177d (new-working-branch) test
-
-# list our worktree
-
-C:\repo\sandbox [master ≡]> git worktree list
-C:/repo/sandbox               673a024 [master]
-C:/repo/sandbox-worktree-dir  e55177d [new-working-branch]
-
-# we're done, so remove the worktree
-
-C:\repo\sandbox [master ≡]> git worktree remove ..\sandbox-worktree-dir\
-
-# verify it's gone
-
-C:\repo\sandbox [master ≡]> git worktree list
-C:/repo/sandbox  673a024 [master]
-
-C:\repo\sandbox [master ≡]> cd ..\sandbox-worktree-dir
-cd : Cannot find path 'C:\repo\sandbox-worktree-dir' because it does not exist.
+git worktree remove ../my-worktree-dir
 
 ```
 
-Isn't Git magic?
+You can create as many worktrees as you like.
 
-I'd love to connect with you on Twitter.  Drop me a line and let me know if you found this article useful.
+One cool way to use this is as an alternative to stashing changes. Say you have a bunch of active changes and you don't want to stash or commit. Add a worktree, do your work, commit, and then remove the worktree. The ongoing work in the original directory remains exactly as it was.
+
+Also, worktrees use less disk space than multiple full-blown clones because Git intelligently manages when it actually duplicates on your hard drive and when it just uses symbolic linking.  
+
+For example, I use a repo that has about 30k files. A clone takes about 1 GB of disk space, but a worktree takes only 150 MB.
+
+Similarly, cloning takes 90 seconds; adding a worktree takes 20 seconds. 
+
+Note that you can't have the same branch checked out simultaneously in different worktrees.
 
 [@tedhudek](https://twitter.com/tedhudek)
 
