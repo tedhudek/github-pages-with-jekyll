@@ -3,6 +3,8 @@ title: "Git worktrees"
 date: 2020-06-16
 ---
 
+## Git worktrees
+
 Did you ever want to check out multiple branches in your Git clone at the same time? Maybe you have a repo for which switching branches takes a prohibitively long time.
 
 You can use the worktrees feature in Git to approximate having multiple clones of the same repo on your machine.  Here's how it works.
