@@ -12,9 +12,7 @@ When you create a worktree from an existing clone, you specify a directory (must
 ```cmd
 
 git worktree add ../my-worktree-dir master
-
 git worktree list
-
 git worktree remove ../my-worktree-dir
 
 ```
