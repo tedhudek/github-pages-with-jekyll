@@ -1,5 +1,4 @@
 ---
-layout: default
 title: "My test page"
 permalink: /articles/test-page
 ---
