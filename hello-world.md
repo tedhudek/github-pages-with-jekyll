@@ -1,7 +1,6 @@
 ---
-layout: page
+layout: default
 title: "My test page"
-theme: jekyll-theme-hacker
 permalink: /articles/test-page
 ---
 
