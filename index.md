@@ -7,5 +7,3 @@ This is an occasional series in which I'll write about Git and other interesting
 [Mount Rainier Trip Report](_posts/2019-05-21-rainier.md)
 
 [@tedhudek](https://twitter.com/tedhudek)
-
-[test page](/articles/test-page)
