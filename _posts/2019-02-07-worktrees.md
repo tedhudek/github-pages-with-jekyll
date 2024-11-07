@@ -29,8 +29,6 @@ Similarly, cloning takes 90 seconds; adding a worktree takes 20 seconds.
 
 Note that you can't have the same branch checked out simultaneously in different worktrees.
 
-[@tedhudek](https://twitter.com/tedhudek)
-
 ## Resources
 
 [Git worktree documentation page](https://git-scm.com/docs/git-worktree)
